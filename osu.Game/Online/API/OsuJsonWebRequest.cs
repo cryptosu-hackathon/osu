@@ -7,13 +7,16 @@ namespace osu.Game.Online.API
 {
     public class OsuJsonWebRequest<T> : JsonWebRequest<T>
     {
+
         public OsuJsonWebRequest(string uri)
             : base(uri)
         {
+            AllowInsecureRequests = true;
         }
 
         public OsuJsonWebRequest()
         {
+            AllowInsecureRequests = true;
         }
 
         protected override string UserAgent => "osu!";
